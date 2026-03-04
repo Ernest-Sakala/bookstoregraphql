@@ -1,5 +1,4 @@
 
-````markdown
 # BookstoreGraphQL
 
 ![Java](https://img.shields.io/badge/Java-21-blue) 
@@ -39,7 +38,7 @@
 - PostgreSQL
 
 ### Setup Instructions
-
+```
 1. Clone the repository:
    ```bash
    git clone https://github.com/Ernest-Sakala/bookstoregraphql.git
@@ -125,9 +124,4 @@ Make sure your code is tested and follows the existing project structure.
 ## ⚖ License
 
 This project is licensed under the **MIT License**.
-
-```
-
----
-
 

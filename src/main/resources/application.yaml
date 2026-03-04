@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: bookstoregraphql
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bookstore
+    username: postgres
+    password: ernest13579!
+    driver-class-name: org.postgresql.Driver
+
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql

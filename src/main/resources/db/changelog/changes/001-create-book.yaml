@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-book-table
+      author: Ernest Sakala
+      changes:
+        - createTable:
+            tableName: BOOK
+            columns:
+              - column:
+                  name: id
+                  type: SERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: category
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image_slug
+                  type: VARCHAR(255)
+              - column:
+                  name: file_path
+                  type: VARCHAR(500)

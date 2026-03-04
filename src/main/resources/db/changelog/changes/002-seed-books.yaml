@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-seed-books
+      author: Ernest Sakala
+      changes:
+        - insert:
+            tableName: BOOK
+            columns:
+              - column:
+                  name: title
+                  value: "Java Programming Basics"
+              - column:
+                  name: author
+                  value: "John Doe"
+              - column:
+                  name: category
+                  value: "Technical"
+              - column:
+                  name: image_slug
+                  value: "java_basics.jpg"
+              - column:
+                  name: file_path
+                  value: "C:/books/java_basics.pdf"
+
+        - insert:
+            tableName: BOOK
+            columns:
+              - column:
+                  name: title
+                  value: "Effective Time Management"
+              - column:
+                  name: author
+                  value: "Jane Smith"
+              - column:
+                  name: category
+                  value: "Self Improvement"
+              - column:
+                  name: image_slug
+                  value: "time_management.jpg"
+              - column:
+                  name: file_path
+                  value: "C:/books/time_management.pdf"

@@ -1,0 +1,30 @@
+scalar Upload
+
+type Book {
+    id: ID
+    title: String
+    author: String
+    category: String
+    imageSlug: String
+    filePath: String
+}
+
+type Query {
+    books: [Book]
+    bookById(id: ID!): Book
+}
+
+type Mutation {
+    createBook(title: String!, author: String!, category: String!, imageSlug: String, filePath: String): Book
+    uploadBook(
+        title: String!
+        author: String!
+        category: String!
+        image: Upload!
+        file: Upload!
+    ): Book
+    deleteBook(id: ID!): Boolean
+
+    uploadFile(file: Upload!): String
+}
+

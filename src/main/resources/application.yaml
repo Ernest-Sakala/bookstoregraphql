@@ -17,3 +17,21 @@ spring:
     graphiql:
       enabled: true
       path: /graphiql
+
+# CHANGE in production: openssl rand -base64 64
+jwt:
+  secret: bG9uZ1JhbmRvbVNlY3JldEtleUZvckpXVFNpZ25pbmdUaGF0SXNBZ29vZExlbmd0aA==
+  expiration-ms: 86400000
+
+  # ── CORS ────────────────────────────────────────────────────────────
+cors:
+  allowed-origins: http://localhost:4200
+
+  # ── Logging ─────────────────────────────────────────────────────────
+logging:
+  level:
+    com:
+      bookstore: DEBUG
+    org:
+      springframework:
+        graphql: INFO

@@ -1,5 +1,4 @@
-package com.cs.unza.zm.bookstore.config;
-import java.util.UUID;
+package com.cs.unza.zm.bookstore.config.graphql;
 
 
 public class FileUploadResult {

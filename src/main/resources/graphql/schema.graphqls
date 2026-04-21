@@ -1,5 +1,8 @@
 scalar Upload
 
+# ── Book type (used by the books-list query) ─────────────────
+
+
 type Book {
     id: ID
     title: String
@@ -7,14 +10,32 @@ type Book {
     category: String
     imageSlug: String
     filePath: String
+    price:        Float
+    description:  String
 }
 
+
+# ── Root Query ───────────────────────────────────────────────
 type Query {
+
     books: [Book]
+
     bookById(id: ID!): Book
+
+    # Fetch the current user's cart (requires auth)
+    cart: Cart!
+
+    # Fetch all books (public)
+   # books(search: String): [Book!]!
+
+    # Fetch a single book by ID (public)
+    book(id: ID!): Book
 }
 
+
+# ── Root Mutation ────────────────────────────────────────────
 type Mutation {
+
     createBook(title: String!, author: String!, category: String!, imageSlug: String, filePath: String): Book
     uploadBook(
         title: String!
@@ -26,5 +47,68 @@ type Mutation {
     deleteBook(id: ID!): Boolean
 
     uploadFile(file: Upload!): String
+    # Auth
+    register(input: RegisterInput!): AuthPayload!
+    login(input: LoginInput!):    AuthPayload!
+
+    # Cart (all require auth)
+    addToCart(input: AddToCartInput!):          Cart!
+    updateCartItem(itemId: ID!, quantity: Int!): Cart!
+    removeCartItem(itemId: ID!):                Cart!
+    clearCart:                                  Boolean!
 }
+
+
+# ── Auth types ───────────────────────────────────────────────
+type AuthPayload {
+    token:  String!
+    userId: ID!
+    name:   String!
+    email:  String!
+    role:   String!
+}
+
+# ── Cart types ───────────────────────────────────────────────
+type CartItem {
+    id:           ID!
+    bookId:       ID!
+    bookTitle:    String!
+    bookAuthor:   String!
+    bookPrice:    Float!
+    coverImageUrl: String
+    quantity:     Int!
+    lineTotal:    Float!
+}
+
+type Cart {
+    items:      [CartItem!]!
+    totalItems: Int!
+    totalPrice: Float!
+    itemCount:  Int!
+}
+
+
+
+
+# ── Input types ──────────────────────────────────────────────
+input RegisterInput {
+    name:     String!
+    email:    String!
+    password: String!
+}
+
+input LoginInput {
+    email:    String!
+    password: String!
+}
+
+input AddToCartInput {
+    bookId:       ID!
+    bookTitle:    String!
+    bookAuthor:   String!
+    bookPrice:    Float!
+    coverImageUrl: String
+    quantity:     Int
+}
+
 

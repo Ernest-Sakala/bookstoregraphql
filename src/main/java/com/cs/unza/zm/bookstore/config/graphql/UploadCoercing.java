@@ -1,4 +1,4 @@
-package com.cs.unza.zm.bookstore.config;
+package com.cs.unza.zm.bookstore.config.graphql;
 
 import graphql.schema.Coercing;
 import graphql.schema.CoercingParseLiteralException;

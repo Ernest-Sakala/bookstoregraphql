@@ -1,4 +1,4 @@
-package com.cs.unza.zm.bookstore.config;
+package com.cs.unza.zm.bookstore.config.graphql;
 
 import java.util.Map;
 import java.util.List;

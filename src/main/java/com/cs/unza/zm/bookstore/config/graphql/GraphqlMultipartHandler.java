@@ -1,4 +1,4 @@
-package com.cs.unza.zm.bookstore.config;
+package com.cs.unza.zm.bookstore.config.graphql;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

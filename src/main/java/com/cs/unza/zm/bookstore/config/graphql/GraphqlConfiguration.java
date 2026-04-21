@@ -1,8 +1,8 @@
-package com.cs.unza.zm.bookstore.config;
+package com.cs.unza.zm.bookstore.config.graphql;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import graphql.schema.GraphQLScalarType;
-import static com.cs.unza.zm.bookstore.config.GraphqlMultipartHandler.SUPPORTED_RESPONSE_MEDIA_TYPES;
+import static com.cs.unza.zm.bookstore.config.graphql.GraphqlMultipartHandler.SUPPORTED_RESPONSE_MEDIA_TYPES;
 import static graphql.schema.idl.TypeRuntimeWiring.newTypeWiring;
 import org.springframework.boot.autoconfigure.graphql.GraphQlProperties;
 import org.springframework.context.annotation.Bean;

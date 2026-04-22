@@ -18,7 +18,7 @@ type Book {
 # ── Root Query ───────────────────────────────────────────────
 type Query {
 
-    books: [Book]
+    #books: [Book]
 
     bookById(id: ID!): Book
 
@@ -26,7 +26,7 @@ type Query {
     cart: Cart!
 
     # Fetch all books (public)
-   # books(search: String): [Book!]!
+    books(search: String): [Book!]!
 
     # Fetch a single book by ID (public)
     book(id: ID!): Book

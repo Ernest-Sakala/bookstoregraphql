@@ -3,3 +3,5 @@ databaseChangeLog:
       file: db/changelog/changes/001-create-book.yaml
   - include:
       file: db/changelog/changes/002-seed-books.yaml
+  - include:
+      file: db/changelog/changes/003-create-users.yaml

@@ -1,10 +1,11 @@
 package com.cs.unza.zm.bookstore.controller;
 
 
+import com.cs.unza.zm.bookstore.dto.LoginInput;
+import com.cs.unza.zm.bookstore.dto.RegisterInput;
 import com.cs.unza.zm.bookstore.service.AuthService;
 import org.springframework.graphql.data.method.annotation.*;
 import org.springframework.stereotype.Controller;
-import java.util.Map;
 
 /**
  * GraphQL mutations for authentication.
@@ -25,19 +26,19 @@ public class AuthGraphQL {
     }
 
     @MutationMapping
-    public Object register(@Argument Map<String, String> input) {
+    public Object register(@Argument RegisterInput input) {
         return authService.register(
-            input.get("name"),
-            input.get("email"),
-            input.get("password")
+                input.name(),
+                input.email(),
+                input.password()
         );
     }
 
     @MutationMapping
-    public Object login(@Argument Map<String, String> input) {
+    public Object login(@Argument LoginInput input) {
         return authService.login(
-            input.get("email"),
-            input.get("password")
+                input.email(),
+                input.password()
         );
     }
 }

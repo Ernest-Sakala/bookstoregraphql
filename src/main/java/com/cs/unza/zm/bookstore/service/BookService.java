@@ -23,6 +23,10 @@ public class BookService {
         return repository.findAll();
     }
 
+    public List<Book> search(String search){
+        return repository.search(search);
+    }
+
     public Book getBookById(Integer id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Book not found with id: " + id));

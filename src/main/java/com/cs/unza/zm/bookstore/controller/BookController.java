@@ -18,8 +18,13 @@ public class BookController {
         this.service = service;
     }
 
+
+
     @QueryMapping
-    public List<Book> books() {
+    public List<Book> books(@Argument String search) {
+        if (search != null && !search.isBlank()) {
+            return service.search(search.trim());
+        }
         return service.getAllBooks();
     }
 
